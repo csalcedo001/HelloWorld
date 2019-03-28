@@ -4,6 +4,15 @@
 
 using namespace std;
 
+bool isVowel(char c) {
+	return
+		c == 'a' ||
+		c == 'e' ||
+		c == 'i' ||
+		c == 'o' ||
+		c == 'u';
+}
+
 int main (void) {
 	int charCount[CHARS] = {0};
 	string text;
@@ -14,9 +23,9 @@ int main (void) {
 		}
 	}
 		
-	for (int i = 0; i < CHARS; ++i) {
-		if (charCount[i]) {
-			cout << (char) i << ": " << charCount[i] << endl;
+	for (int c = 0; c < CHARS; ++c) {
+		if (charCount[c] && isVowel(c)) {
+			cout << (char) c << ": " << charCount[c] << endl;
 		}
 	}
 	
