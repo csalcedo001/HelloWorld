@@ -8,12 +8,12 @@ int main (void) {
 	int charCount[CHARS] = {0};
 	string text;
 	
-	getline(cin, text);
-	
-	for (char& c : text) {
-		charCount[c]++;
+	while(getline(cin, text)) {		
+		for (char& c : text) {
+			charCount[c]++;
+		}
 	}
-	
+		
 	for (int i = 0; i < CHARS; ++i) {
 		if (charCount[i]) {
 			cout << (char) i << ": " << charCount[i] << endl;
